@@ -1,0 +1,14 @@
+export const menuItems = [
+  { name: 'Hakka Noodles', category: 'Chinese', price: 140, description: 'Wok-tossed noodles, garden vegetables, spring onion.', image: 'https://images.unsplash.com/photo-1617622141573-2e00d881ded4?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Veg Fried Rice', category: 'Chinese', price: 140, description: 'Fragrant rice, crisp vegetables and house seasoning.', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Manchurian Rice', category: 'Chinese', price: 160, description: 'Vegetable Manchurian with aromatic fried rice.', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Chilli Garlic Noodles', category: 'Chinese', price: 160, description: 'Smoky noodles with roasted chilli and garlic.', image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Garden Harvest Pizza', category: 'Pizza', price: 240, description: 'Bell pepper, sweet corn, olives and mozzarella.', image: 'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Corn Bite Club', category: 'Sandwiches', price: 170, description: 'Triple-decker vegetables, cheese and signature spread.', image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Smoky Paneer Burger', category: 'Burgers', price: 190, description: 'Charred paneer patty, slaw and mint aioli.', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Paneer Lababdar', category: 'Paneer', price: 260, description: 'Cottage cheese in a rich tomato-cashew gravy.', image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Cream of Tomato', category: 'Soups', price: 120, description: 'Slow-roasted tomato, basil oil and cream.', image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Café Mocha', category: 'Coffee', price: 130, description: 'Espresso, dark chocolate and steamed milk.', image: 'https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Green Apple Fizz', category: 'Mocktails', price: 150, description: 'Green apple, lime, mint and sparkling soda.', image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Belgian Chocolate Shake', category: 'Shakes', price: 180, description: 'Rich chocolate, ice cream and cocoa crumble.', image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=80' },
+]
