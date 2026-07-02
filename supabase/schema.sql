@@ -132,7 +132,9 @@ begin
 
   loop
     v_attempts := v_attempts + 1;
-    v_code := 'CB-RES-' || upper(substr(encode(gen_random_bytes(3),'hex'),1,4));
+    -- Avoid a pgcrypto dependency: some Supabase projects do not expose
+    -- gen_random_bytes(), which would make the booking RPC fail at runtime.
+    v_code := 'CB-RES-' || upper(substr(md5(random()::text || clock_timestamp()::text),1,4));
     begin
       insert into public.reservations (reservation_id,customer_name,phone,booking_date,booking_time,guests,table_number)
       values (v_code,trim(p_customer_name),trim(p_phone),p_booking_date,p_booking_time,p_guests,p_table_number)

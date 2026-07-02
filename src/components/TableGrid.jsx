@@ -10,7 +10,7 @@ export default function TableGrid({ statuses = {}, selected, onSelect, compact =
   return <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
     {Array.from({ length: 20 }, (_, index) => index + 1).map(number => {
       const status = statuses[number] || 'available'; const enabled = status === 'available' && onSelect
-      return <button type="button" key={number} disabled={!enabled} onClick={() => onSelect?.(number)} aria-label={`Table ${number}, ${status}`} className={`relative flex aspect-square flex-col items-center justify-center rounded-xl border transition ${styles[status]} ${selected === number ? '!border-lime !bg-lime !text-ink ring-2 ring-lime/20' : ''} ${enabled ? 'cursor-pointer hover:-translate-y-0.5' : 'cursor-default'} ${compact ? 'text-xs' : ''}`}>
+      return <button type="button" key={number} disabled={!enabled} onClick={() => onSelect?.(number)} aria-label={`Table ${number}, ${status}`} className={`relative flex aspect-square flex-col items-center justify-center rounded-xl border-[3px] border-ink shadow-[3px_3px_0_#171713] transition ${styles[status]} ${selected === number ? '!bg-lime !text-white' : ''} ${enabled ? 'cursor-pointer hover:-translate-y-1' : 'cursor-default'} ${compact ? 'text-xs' : ''}`}>
         <Armchair size={compact ? 14 : 18}/><strong className="mt-1">T{number}</strong>
       </button>
     })}

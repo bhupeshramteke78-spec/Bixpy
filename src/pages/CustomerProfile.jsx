@@ -44,7 +44,7 @@ export default function CustomerProfile() {
 
   const createdDate = user?.created_at ? new Date(user.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }) : null
 
-  return <><PageHero eyebrow="Your account" title={`Welcome, ${metadata.full_name || 'friend'}.`} text="Manage your profile and view reservation access based on your signed-in customer account."/>
+  return <div className="page-canvas"><PageHero eyebrow="Your account" title={`Welcome, ${metadata.full_name || 'friend'}.`} text="Manage your profile and view reservation access based on your signed-in customer account."/>
     <section className="py-16"><div className="shell grid gap-6 lg:grid-cols-[.85fr_1.15fr]">
       <article className="card h-fit overflow-hidden shadow-glow"><div className="border-b border-white/[.07] p-6 sm:p-7"><div className="flex items-start justify-between gap-4"><div className="flex items-center gap-4"><span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-lime text-ink"><UserRound/></span><div><p className="text-[10px] font-bold uppercase tracking-[.18em] text-lime">Profile details</p><h2 className="mt-1 font-display text-2xl">{metadata.full_name || 'Corn Bite customer'}</h2></div></div>{!editing&&<button onClick={()=>{setEditing(true);setSuccess('')}} className="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-xs text-muted hover:border-lime/40 hover:text-lime"><Pencil size={14}/>Edit</button>}</div></div>
         <div className="p-6 sm:p-7">{error&&<div role="alert" className="mb-5 rounded-xl border border-red-400/20 bg-red-400/[.06] p-3 text-sm text-red-300">{error}</div>}{success&&<div role="status" className="mb-5 rounded-xl border border-lime/20 bg-lime/[.06] p-3 text-sm text-lime">{success}</div>}
@@ -53,7 +53,7 @@ export default function CustomerProfile() {
         </div>
       </article>
       <article id="reservations" className="card scroll-mt-28 overflow-hidden shadow-glow"><div className="border-b border-white/[.07] p-6 sm:p-7"><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full bg-lime/10 text-lime"><CalendarCheck size={20}/></span><div><p className="text-[10px] font-bold uppercase tracking-[.18em] text-lime">Reservation details</p><h2 className="mt-1 font-display text-2xl">Check reservation</h2></div></div></div><div className="p-6 sm:p-7"><form onSubmit={checkReservation} className="rounded-2xl border border-white/10 bg-white/[.02] p-6 sm:p-8"><label><span className="label">Customer email</span><input className="input" type="email" value={user?.email || ''} readOnly /></label><p className="mt-3 text-sm leading-6 text-muted">Use your signed-in email to check reservation access for this account.</p><button disabled={checkingReservation} className="btn-primary mt-6">{checkingReservation ? 'Checking…' : 'Check reservation'}</button>{reservationNotice && <div className="mt-5 rounded-2xl border border-dashed border-white/10 bg-white/[.02] p-5 text-sm leading-6 text-muted">{reservationNotice}</div>}</form></div></article>
-    </div></section></>
+    </div></section></div>
 }
 
 function ProfileRow({ icon: Icon, label, value }) { return <div className="flex items-start gap-3"><Icon size={17} className="mt-0.5 shrink-0 text-lime"/><div className="min-w-0"><dt className="text-xs text-muted">{label}</dt><dd className="mt-0.5 break-words text-cream">{value}</dd></div></div> }

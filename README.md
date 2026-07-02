@@ -15,7 +15,13 @@ Add your Supabase project URL and anon key to `.env` (the anon key is designed t
 ## Provision Supabase
 
 1. Create a Supabase project.
-2. Open **SQL Editor**, paste [`supabase/schema.sql`](supabase/schema.sql), and run it.
+2. Open **SQL Editor** and run these files in order:
+   - [`supabase/schema.sql`](supabase/schema.sql)
+   - [`supabase/ordering.sql`](supabase/ordering.sql)
+   - [`supabase/menu_availability.sql`](supabase/menu_availability.sql)
+   - [`supabase/delivery_panel.sql`](supabase/delivery_panel.sql)
+   - [`supabase/payment_management.sql`](supabase/payment_management.sql)
+   - [`supabase/deployment_security_hardening.sql`](supabase/deployment_security_hardening.sql)
 3. In **Authentication → Users**, create the restaurant owner's email/password user.
 4. Copy that user's UUID and run:
 
@@ -29,7 +35,7 @@ insert into public.admin_users (user_id) values ('YOUR-AUTH-USER-UUID');
 
 - Customer booking is handled by a security-definer RPC that returns only confirmation fields.
 - A partial unique database index prevents two active reservations for the same table/date/time, including simultaneous requests.
-- Anonymous users can insert pending reservations but cannot read guest data.
+- Customers must be authenticated to create pending reservations and cannot read other guests' data.
 - Only authenticated users present in `admin_users` can select/update/delete reservations.
 - Database triggers enforce the status lifecycle and timestamps.
 - Availability uses a PII-safe RPC. Realtime subscriptions respond to inserts and updates; there is no polling.
